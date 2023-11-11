@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Список статей{% endblock %}
+
+{% block content %}
+<h1 class="my-4">Список статей</h1>
+<div class="row">
+    {% for article in articles %}
+    <div class="col-md-4">
+        <h2>{{ article.title }}</h2>
+        <p>Опубликовано: {{ article.publish_date }}</p>
+        <p>Автор: {{ article.author }}</p>
+        <p><a class="btn btn-primary" href="{% url 'article_detail' pk=article.pk %}" role="button">Подробнее »</a></p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ article.title }}{% endblock %}
+
+{% block content %}
+<h1 class="my-4">{{ article.title }}</h1>
+<p>Опубликовано: {{ article.publish_date }}</p>
+<p>Автор: {{ article.author }}</p>
+<div class="content mb-4">
+    {{ article.content }}
+</div>
+<a href="{% url 'article_list' %}" class="btn btn-secondary">&laquo; Вернуться к списку статей</a>
+{% endblock %}
